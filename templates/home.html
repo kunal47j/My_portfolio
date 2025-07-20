@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="/static/home.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    </head>
+
+    <body>
+        <!--Nev-bar-->
+        <nav class="navbar">
+            <a href="{{ url_for('home') }}" class="navbar-brand"><span class="text-primary">Port</span>folio</a>
+            <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="navbar-links" id="navbar-links">
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('project') }}">Projects</a></li>
+                <li><a href="{{ url_for('contact') }}">Contacts</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main hero section with flex layout -->
+        <div class="home-hero-container">
+            <div class="home-hero-left">
+                <h1>Welcome To <span class="text-primary">KJdev.com</span></h1>
+                <div class="glow">
+                    <h2>Kunal Janbandhu</h2>
+                </div>
+                <div class="info">
+                    <p>Motivated Python Developer with hands-on experience in building scalable web applications using Django and
+                        Flask. Skilled in writing clean, efficient code and collaborating in agile teams. Strong foundation in debugging,
+                        optimization, and software deployment workflows. Eager to learn and contribute to high-impact projects.
+                        </p>
+                </div>
+                <div class="icon-container">
+                    <div class="icon animated-icons">
+                        <a href="https://www.linkedin.com/in/kunal-janbandhu-090939301?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bl54eydEGR8WZe4dFnUPtpA%3D%3D"
+                            class="linkedin icon-anim" title="LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/kunal47j" class="github icon-anim" title="GitHub">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a href="https://www.instagram.com/_kunal__janbandhu_/" class="instagram icon-anim"
+                            title="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://x.com/kunal7janbandhu" class="twitter icon-anim" title="Twitter">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="home-hero-right">
+                <div class="hero-pic">
+                    <img src="/static/media/_MG_9108-removebg-preview.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const toggleBtn = document.getElementById('navbar-toggle');
+            const navLinks = document.getElementById('navbar-links');
+            if (toggleBtn && navLinks) {
+                toggleBtn.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                    toggleBtn.classList.toggle('open');
+                });
+            }
+        </script>
+    </body>
+
+</html>
